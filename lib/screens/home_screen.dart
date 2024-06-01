@@ -38,10 +38,6 @@ class _HomeScreenState extends State<HomeScreen> {
       ),
       resizeToAvoidBottomInset: false,
       floatingActionButton: FloatingActionButton(
-        shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(50)
-        ),
-
         onPressed: () {
           showModalBottomSheet(
               context: context,
