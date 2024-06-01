@@ -84,7 +84,7 @@ class _MyAppState extends State<MyApp> {
           useMaterial3: true,
         ),
         home: const HomeScreen(),
-        themeMode: ThemeMode.light,
+        themeMode: ThemeMode.dark,
       ),
     );
   }

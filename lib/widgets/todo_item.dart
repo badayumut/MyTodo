@@ -15,13 +15,6 @@ class TodoItem extends StatelessWidget {
       child: Container(
           clipBehavior: Clip.antiAlias,
           decoration: BoxDecoration(
-              border: Theme.of(context).brightness == Brightness.light
-                  ? Border.all(
-                      color: Theme.of(context)
-                          .colorScheme
-                          .outlineVariant
-                          .withOpacity(0.1))
-                  : null,
               boxShadow: [
                 BoxShadow(
                   color: Theme.of(context).brightness == Brightness.light

@@ -50,7 +50,7 @@ class _HomeScreenState extends State<HomeScreen> {
         slivers: [
           if( todoNotifier.categorizedTodos['notCompleted']!.isEmpty)
             SliverPadding(
-              padding: const EdgeInsets.all(22.0),
+              padding: const EdgeInsets.all(21.0),
               sliver: SliverToBoxAdapter(
                 child: Center(
                   child: Row(

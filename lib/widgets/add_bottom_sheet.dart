@@ -66,7 +66,9 @@ class _AddBottomSheetState extends State<AddBottomSheet> {
                   decoration: InputDecoration(
                     floatingLabelBehavior: FloatingLabelBehavior.never,
                     contentPadding: const EdgeInsets.symmetric(horizontal: 18,vertical: 14),
-                    fillColor: Colors.white,
+                    fillColor: Theme.of(context).brightness == Brightness.dark
+                        ? Colors.black.withOpacity(0.1)
+                        : Colors.white.withOpacity(0.3),
                     filled: true,
                     enabledBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(11),
@@ -127,8 +129,8 @@ class _AddBottomSheetState extends State<AddBottomSheet> {
                     }
                   }, child: Text(
                   'Save',
-                  style: TextStyle(fontSize: 16),
-                ),
+                    style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600),
+                  ),
                 ),
                 const SizedBox(width: 16),
               ],
