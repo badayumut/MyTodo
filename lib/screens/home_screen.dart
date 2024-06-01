@@ -32,7 +32,6 @@ class _HomeScreenState extends State<HomeScreen> {
         title: Text("To-do List", style: GoogleFonts.poppins(
           letterSpacing: 0,
           fontSize: 20,
-          color:Colors.black,
           fontWeight: FontWeight.w600,
         ),),
       ),
@@ -49,10 +48,9 @@ class _HomeScreenState extends State<HomeScreen> {
       body: CustomScrollView(
         physics: AlwaysScrollableScrollPhysics(),
         slivers: [
-
           if( todoNotifier.categorizedTodos['notCompleted']!.isEmpty)
             SliverPadding(
-              padding: const EdgeInsets.all(24.0),
+              padding: const EdgeInsets.all(21.0),
               sliver: SliverToBoxAdapter(
                 child: Center(
                   child: Row(
@@ -60,8 +58,10 @@ class _HomeScreenState extends State<HomeScreen> {
                     children: [
                       Icon(Icons.check_circle_outline, color: Theme.of(context).colorScheme.secondary, size: 30,),
                       const SizedBox(width: 16,),
-                      Text("No Todos", style: GoogleFonts.poppins(
-                        letterSpacing: 0,
+                      Text(
+                        "All Completed",
+                        style: GoogleFonts.poppins(
+                          letterSpacing: 0,
                         fontSize: 20,
                         fontWeight: FontWeight.w600,
                         color: Theme.of(context).colorScheme.secondary,
@@ -80,11 +80,10 @@ class _HomeScreenState extends State<HomeScreen> {
               childCount: todoNotifier.categorizedTodos['notCompleted']!.length,
             ),
           ),
-          if( todoNotifier.categorizedTodos['completed']!.isNotEmpty)
           SliverToBoxAdapter(
             child: MyExpansionTile(
               visualDensity: VisualDensity.compact,
-              initiallyExpanded: false,
+              initiallyExpanded: true,
               dense: true,
               tilePadding:
               const EdgeInsets.only(left: 20, right: 16, top: 14),

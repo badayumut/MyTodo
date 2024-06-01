@@ -711,19 +711,21 @@ class _MyExpansionTileState extends State<MyExpansionTile>
             child: ListTileTheme.merge(
               iconColor: _iconColor.value ?? expansionTileTheme.iconColor,
               textColor: _headerColor.value,
-              child: ListTile(
-                splashColor: Colors.transparent,
-                enabled: widget.enabled,
+              child: GestureDetector(
                 onTap: _handleTap,
-                dense: widget.dense,
-                visualDensity: widget.visualDensity,
-                enableFeedback: widget.enableFeedback,
-                contentPadding:
-                    widget.tilePadding ?? expansionTileTheme.tilePadding,
-                leading: widget.leading ?? _buildLeadingIcon(context),
-                title: widget.title,
-                subtitle: widget.subtitle,
-                trailing: widget.trailing ?? _buildTrailingIcon(context),
+                child: ListTile(
+                  splashColor: Colors.transparent,
+                  enabled: widget.enabled,
+                  dense: widget.dense,
+                  visualDensity: widget.visualDensity,
+                  enableFeedback: widget.enableFeedback,
+                  contentPadding:
+                      widget.tilePadding ?? expansionTileTheme.tilePadding,
+                  leading: widget.leading ?? _buildLeadingIcon(context),
+                  title: widget.title,
+                  subtitle: widget.subtitle,
+                  trailing: widget.trailing ?? _buildTrailingIcon(context),
+                ),
               ),
             ),
           ),

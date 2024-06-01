@@ -60,6 +60,18 @@ class _MyAppState extends State<MyApp> {
         debugShowCheckedModeBanner: false,
         scrollBehavior: const CupertinoScrollBehavior(),
         title: 'MyTodo',
+        darkTheme: ThemeData(
+          textTheme: GoogleFonts.poppinsTextTheme(),
+          pageTransitionsTheme: const PageTransitionsTheme(
+            builders: {
+              TargetPlatform.android: CupertinoPageTransitionsBuilder(),
+              TargetPlatform.iOS: CupertinoPageTransitionsBuilder(),
+            },
+          ),
+          colorScheme: ColorScheme.fromSeed(
+              seedColor: Colors.blueAccent, brightness: Brightness.dark),
+          useMaterial3: true,
+        ),
         theme: ThemeData(
           textTheme: GoogleFonts.poppinsTextTheme(),
           pageTransitionsTheme: const PageTransitionsTheme(
@@ -72,6 +84,7 @@ class _MyAppState extends State<MyApp> {
           useMaterial3: true,
         ),
         home: const HomeScreen(),
+        themeMode: ThemeMode.light,
       ),
     );
   }
