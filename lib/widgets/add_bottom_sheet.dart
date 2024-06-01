@@ -48,10 +48,10 @@ class _AddBottomSheetState extends State<AddBottomSheet> {
                 surfaceTintColor: Colors.transparent,
                 child:
                 TextField(
-                  style: const TextStyle(
-                    fontWeight: FontWeight.w500,
+                  style: TextStyle(
+                      fontWeight: FontWeight.w500,
                     fontSize: 18,
-                  ),
+                      color: Theme.of(context).colorScheme.onSurface),
                   onChanged: (value) {
                     setState(() {
                       textFieldText = value;
